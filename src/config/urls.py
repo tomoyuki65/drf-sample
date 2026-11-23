@@ -19,7 +19,15 @@ Including another URLconf
 # from django.contrib import admin
 # from django.urls import path
 
+# 正規表現を使うルーティング関数
+from django.urls import re_path
+
+# Viewファイル（ハンドラー）をインポート
+from presentation.http.supporting.hello.hello_view import HelloView
+
 urlpatterns = [
     # デフォルト設定を無効化
     # path('admin/', admin.site.urls),
+    # ルーティング追加
+    re_path(r"^api/v1/hello/?$", HelloView.as_view()),
 ]
