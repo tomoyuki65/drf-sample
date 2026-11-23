@@ -1,4 +1,4 @@
-from supporting.hello.hello import HelloUseCase
+from supporting.hello.hello_use_case import HelloUseCase
 
 
 def create_hello_use_case() -> HelloUseCase:
