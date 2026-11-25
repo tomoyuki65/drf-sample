@@ -13,6 +13,8 @@ Pythonのフレームワーク「Django」、「Django REST framework（DRF）�
 - pytest: 9.2.0
 - pytest-django: 4.14.0
 - ruff: 0.17.6
+- PostgreSQL: 18.7.0
+- psycopg-binary: 3.3.9
   
 <br/>
   
