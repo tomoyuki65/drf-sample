@@ -133,13 +133,24 @@ docker compose up -d
 ```
   
 ---
-   
-### 5. Dockerコンテナの停止・削除
+  
+### 5. DBマイグレーションの実行
+    
+```
+docker compose exec drf uv run python src/manage.py migrate database
+```
+> ※ マイグレーション状態を確認する場合は、コマンド「docker compose run --rm drf uv run python src/manage.py showmigrations」を実行して下さい。
+  
+> ※ usersテーブルに初期データを登録して試す場合、「docker compose run --rm drf uv run python src/manage.py seed_user」を実行して下さい。
+  
+---
+  
+### 6. Dockerコンテナの停止・削除
   
 ```
 docker compose down
 ```
-> ※ボリュームも合わせて削除したい場合は、オプション「-v」を付けて実行して下さい。（例：docker compose down -v）
+> ※ ボリュームも合わせて削除したい場合は、オプション「-v」を付けて実行して下さい。（例：docker compose down -v）
   
 <br/>
   
@@ -168,6 +179,15 @@ docker compose run --rm drf uv run ruff check .
 docker compose exec drf uv run pytest
 ```
   
+---
+  
+### 4. マイグレーションファイル作成用コマンド
+  
+```
+docker compose exec drf uv run python src/manage.py makemigrations database
+```
+> ※「src/infrastructure/database/models」配下にモデル用ファイルを作成、または対象のファイル修正後、コマンドを実行するとマイグレーションファイルが自動生成されます。
+  
 <br/>
   
 ## APIのエンドポイント
@@ -176,4 +196,3 @@ Base URL: http://localhost:8000
   
 - GET /api/v1/hello  
   「{ "message": "Hello World !!" }」を出力
-  
