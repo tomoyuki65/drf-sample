@@ -139,9 +139,9 @@ docker compose up -d
 ```
 docker compose exec drf uv run python src/manage.py migrate database
 ```
-> ※ マイグレーション状態を確認する場合は、コマンド「docker compose run --rm drf uv run python src/manage.py showmigrations」を実行して下さい。
+> ※ マイグレーション状態を確認する場合は、コマンド「docker compose exec drf uv run python src/manage.py showmigrations」を実行して下さい。
   
-> ※ usersテーブルに初期データを登録して試す場合、「docker compose run --rm drf uv run python src/manage.py seed_user」を実行して下さい。
+> ※ usersテーブルに初期データを登録して試す場合、「docker compose exec drf uv run python src/manage.py seed_user」を実行して下さい。
   
 ---
   
