@@ -23,6 +23,7 @@ Including another URLconf
 from django.urls import re_path
 
 # Viewファイル（ハンドラー）をインポート
+from presentation.http.core.member.member_view import CalculateMemberRankView
 from presentation.http.supporting.hello.hello_view import HelloView
 
 urlpatterns = [
@@ -30,4 +31,7 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     # ルーティング追加
     re_path(r"^api/v1/hello/?$", HelloView.as_view()),
+    re_path(
+        r"^api/v1/members/(?P<uid>[^/]+)/rank/?$", CalculateMemberRankView.as_view()
+    ),
 ]

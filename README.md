@@ -198,3 +198,11 @@ Base URL: http://localhost:8000
   
 - GET /api/v1/hello  
   「{ "message": "Hello World !!" }」を出力
+
+- GET /api/v1/members/:uid/rank  
+  対象メンバーのランク取得
+  
+<br/>
+  
+## 参考記事  
+[・Django REST framework（DRF）入門｜PythonのDjangoでAPIを作成する方法【Docker・uv・DDD】](https://tomoyuki65.com/django-rest-framework-api)
